@@ -104,19 +104,19 @@ const pvts = {
     account: "UCq-Fj5jknLsUf-MWSy4_brA"
   }
 }
-const sub2willne = {
+const me = {
   pew: {
-    name: "WillNE",
-    account: "UCaFUrR3oSxOl5Y9y6tvLTEg"
+    name: "Felix",
+    account: "UC-lHJZR3Gqxm24_Vd_AJ5Yw"
   },
   ts: {
-    name: "Morgz' Mum",
-    account: "UCqsUQhA6UIwSams54bEnCJw"
+    name: "theLMGN",
+    account: "UC6ienhbxgv4vPmNDgJn6PgQ"
   }
 }
 var strings =  pvts
-if (location.hash == "#willne") {
-  strings = sub2willne
+if (location.hash == "#me") {
+  strings = me
 }
 
 var pewSub = 0
@@ -192,6 +192,8 @@ var oldDiff = 0;
 function render() {
   document.querySelector("#pew").innerText = strings.pew.name
   document.querySelector("#ts").innerText = strings.ts.name
+  document.querySelector("#pew").href = "https://youtube.com/channel/" + strings.pew.account
+  document.querySelector("#ts").href = "https://youtube.com/channel/" + strings.ts.account
   $("#pewSub").numerator({duration: "4900", rounding: "0", toValue: pewSub, easing: "linear"})
   $("#tSub").numerator({duration: "4900", rounding: "0", toValue: tSub, easing: "linear"})
   if (oldT < tSub) {
@@ -238,7 +240,7 @@ function switchPew() {
   strings = pvts
   checkSub()
 }
-function switchWillNE() {
-  strings = sub2willne
+function switchMe() {
+  strings = me
   checkSub()
 }
