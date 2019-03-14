@@ -78,7 +78,7 @@ setInterval(function() {
 
 var oldDiff = 0;
 function render() {
-  respond.update()
+  setTimeout(respond.update)
   $("#pewSub").numerator({duration: "4900", rounding: "0", toValue: pewSub, easing: "linear"})
   $("#tSub").numerator({duration: "4900", rounding: "0", toValue: tSub, easing: "linear"})
   if (oldT < tSub) {
