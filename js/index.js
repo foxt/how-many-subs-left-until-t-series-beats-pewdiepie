@@ -78,10 +78,7 @@ setInterval(function() {
 
 var oldDiff = 0;
 function render() {
-  document.querySelector("#pew").innerText = strings.pew.name
-  document.querySelector("#ts").innerText = strings.ts.name
-  document.querySelector("#pew").href = "https://youtube.com/channel/" + strings.pew.account
-  document.querySelector("#ts").href = "https://youtube.com/channel/" + strings.ts.account
+  respond.update()
   $("#pewSub").numerator({duration: "4900", rounding: "0", toValue: pewSub, easing: "linear"})
   $("#tSub").numerator({duration: "4900", rounding: "0", toValue: tSub, easing: "linear"})
   if (oldT < tSub) {
@@ -100,16 +97,9 @@ function render() {
   }
   oldT = tSub
   oldPew = pewSub
-  var diff = 0
+  var diff = pewSub - tSub
   if (tSub > pewSub) {
-    document.querySelector("#bg").className = "ts"
-    document.querySelector("#winner").innerText = strings.ts.name
     diff = tSub - pewSub
-  } else {
-    document.querySelector("#bg").className = "pew"
-    document.querySelector("#winner").innerText = strings.pew.name
-    diff = pewSub - tSub
-    
   }
   $("#subDiff").numerator({duration: "4900", rounding: "0", toValue: diff, easing: "linear"})
   var result = ((diff - Math.floor(oldDiff - diff)) * 5).toString().toHHMMSS();

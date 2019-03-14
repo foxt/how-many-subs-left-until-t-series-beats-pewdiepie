@@ -12,13 +12,17 @@
 </head>
 
 <body>
-  <div id="bg" class="pew">
+  <div id="bg" class="respondUpdate" data-r_className="'respondUpdate ' + (tSub > pewSub ? 'ts' : 'pew')">
     <div id="container">
-      <h2><b id="winner">Someone</b> is winning by</h2>
+      <h2><b id="winner" class="respondUpdate" data-r_innerText="tSub > pewSub ? strings.ts.name : strings.pew.name">Someone</b> is winning by</h2>
       <h1><b id="subDiff">0</b><sub>SUBS</sub></h1>
       (Estimated time until other takes over <b id="rate">0</b>)<br>
-      <a href="#" id="pew">Felix</a> has: <b id="pewSub">0</b> subs <b id="pewDiff"></b><br>
-      <a href="#" id="ts">T-Series</a> has: <b id="tSub">0</b> subs <b id="tDiff"></b>
+      <a href="#" id="pew" class="respondUpdate"
+      data-r_innerText="strings.pew.name"
+      data-r_href="'https://youtube.com/channel/' + strings.pew.account">Felix</a> has: <b id="pewSub">0</b> subs <b id="pewDiff"></b><br>
+      <a href="#" id="ts" class="respondUpdate"
+      data-r_innerText="strings.ts.name"
+      data-r_href="'https://youtube.com/channel/' + strings.ts.account">T-Series</a> has: <b id="tSub">0</b> subs <b id="tDiff"></b>
     </div>
   </div>
   <footer>
